@@ -1,0 +1,52 @@
+<div>
+  <h1>Monitor Result</h1>
+  <h2>Fail Cases</h2>
+  <% if @fail.empty? %>
+    <div>
+      NONE
+    </div>
+  <% end %>
+  <% @fail.each do |p| %>
+    <div>
+      <% if p.class == String %>
+        <h3>
+          <%= p %>
+        </h3>
+      <% else %>
+        <% p.each do |c| %>
+          <% c.each do |m| %>
+            <p>
+              <%= m %>
+            </p>
+          <% end %>
+        <% end %>
+        <hr>
+      <% end %>
+    <div>
+  <% end %>
+  <br>
+  <h2>Pass Cases</h2>
+  <% if @pass.empty? %>
+    <div>
+      NONE
+    </div>
+  <% end %>
+  <% @pass.each do |p| %>
+    <div>
+      <% if p.class == String %>
+        <h3>
+          <%= p %>
+        </h3>
+      <% else %>
+        <% p.each do |c| %>
+          <% c.each do |m| %>
+            <p>
+              <%= m %>
+            </p>
+          <% end %>
+        <% end %>
+        <hr>
+      <% end %>
+    <div>
+  <% end %>
+</div>
